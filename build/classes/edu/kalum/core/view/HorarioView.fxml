@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.HorarioController">
+   <children>
+      <Label layoutX="26.0" layoutY="35.0" prefHeight="23.0" prefWidth="113.0" text="HORARIOS">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblHorario" layoutX="23.0" layoutY="69.0" prefHeight="245.0" prefWidth="655.0">
+        <columns>
+          <TableColumn fx:id="colHorarioIncio" prefWidth="327.5" text="HORARIO DE INICIO" />
+          <TableColumn fx:id="colHorarioFinal" prefWidth="327.5" text="HORARIO DE FINALIZACION" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnSalir" layoutX="26.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="SALIR" />
+   </children>
+</AnchorPane>

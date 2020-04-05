@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.SalonController">
+   <children>
+      <Label layoutX="35.0" layoutY="34.0" prefHeight="23.0" prefWidth="215.0" text="SALONES">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblSalon" layoutX="23.0" layoutY="69.0" prefHeight="245.0" prefWidth="655.0">
+        <columns>
+          <TableColumn fx:id="colNombreSalon" prefWidth="218.33" text="NOMBRE DEL SALON" />
+          <TableColumn fx:id="colDescripcion" prefWidth="218.33" text="DESCRIPCION" />
+            <TableColumn fx:id="colCapacidad" prefWidth="218.33" text="CAPACIDAD" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnSalir" layoutX="23.0" layoutY="329.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="SALIR" />
+   </children>
+</AnchorPane>
