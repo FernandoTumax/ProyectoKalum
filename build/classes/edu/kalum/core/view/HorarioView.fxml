@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.HorarioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.HorarioController">
    <children>
-      <Label layoutX="26.0" layoutY="35.0" prefHeight="23.0" prefWidth="113.0" text="HORARIOS">
+      <Label layoutX="23.0" layoutY="31.0" prefHeight="34.0" prefWidth="649.0" text="HORARIOS" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="20.0" />
+            <Font name="Times New Roman" size="41.0" />
          </font>
       </Label>
-      <TableView fx:id="tblHorario" layoutX="23.0" layoutY="69.0" prefHeight="245.0" prefWidth="655.0">
+      <TableView fx:id="tblHorario" layoutX="25.0" layoutY="196.0" prefHeight="245.0" prefWidth="973.0">
         <columns>
-          <TableColumn fx:id="colHorarioIncio" prefWidth="327.5" text="HORARIO DE INICIO" />
-          <TableColumn fx:id="colHorarioFinal" prefWidth="327.5" text="HORARIO DE FINALIZACION" />
+          <TableColumn fx:id="colHorarioIncio" prefWidth="486.5" text="HORARIO DE INICIO" />
+          <TableColumn fx:id="colHorarioFinal" prefWidth="486.5" text="HORARIO DE FINALIZACION" />
         </columns>
       </TableView>
-      <Button fx:id="btnSalir" layoutX="26.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="SALIR" />
+      <ImageView fitHeight="105.0" fitWidth="117.0" layoutX="905.0" layoutY="31.0" onMouseClicked="#mostrarVentanaPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/cerrar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="25.0" layoutY="458.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="458.0" onMouseClicked="#eliminar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/eliminar.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

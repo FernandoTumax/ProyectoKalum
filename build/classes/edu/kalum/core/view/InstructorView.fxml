@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.InstructorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.InstructorController">
    <children>
-      <Label layoutX="20.0" layoutY="34.0" prefHeight="23.0" prefWidth="108.0" text="Instructores">
+      <Label layoutX="23.0" layoutY="31.0" prefHeight="34.0" prefWidth="649.0" text="Instructores" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="20.0" />
+            <Font name="Times New Roman" size="41.0" />
          </font>
       </Label>
-      <TableView fx:id="tblInstructor" layoutX="23.0" layoutY="69.0" prefHeight="245.0" prefWidth="655.0">
+      <TableView fx:id="tblInstructor" layoutX="25.0" layoutY="196.0" prefHeight="245.0" prefWidth="973.0">
         <columns>
-          <TableColumn fx:id="colApellido" prefWidth="93.0" text="APELLIDOS" />
-          <TableColumn fx:id="colNombre" prefWidth="93.0" text="NOMBRES" />
-            <TableColumn fx:id="colDireccion" prefWidth="93.0" text="DIRECCION" />
-            <TableColumn fx:id="colTelefono" prefWidth="93.0" text="TELEFONO" />
-            <TableColumn fx:id="colComentario" prefWidth="93.0" text="COMENTARIO" />
-            <TableColumn fx:id="colEstatus" prefWidth="93.0" text="ESTATUS" />
-            <TableColumn fx:id="colFoto" prefWidth="95.0" text="FOTOS" />
+          <TableColumn fx:id="colApellido" prefWidth="139.0" text="APELLIDOS" />
+          <TableColumn fx:id="colNombre" prefWidth="139.0" text="NOMBRES" />
+            <TableColumn fx:id="colDireccion" prefWidth="139.0" text="DIRECCION" />
+            <TableColumn fx:id="colTelefono" prefWidth="139.0" text="TELEFONO" />
+            <TableColumn fx:id="colComentario" prefWidth="139.0" text="COMENTARIO" />
+            <TableColumn fx:id="colEstatus" prefWidth="139.0" text="ESTATUS" />
+            <TableColumn fx:id="colFoto" prefWidth="139.0" text="FOTOS" />
         </columns>
       </TableView>
-      <Button fx:id="btnSalir" layoutX="20.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="SALIR" />
+      <ImageView fitHeight="105.0" fitWidth="117.0" layoutX="905.0" layoutY="31.0" onMouseClicked="#mostrarVentanaPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/cerrar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="25.0" layoutY="458.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="458.0" onMouseClicked="#eliminar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/eliminar.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

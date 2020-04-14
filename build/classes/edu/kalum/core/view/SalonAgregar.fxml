@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.SalonAgregarController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Agregar Salon" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="63.0" prefHeight="17.0" prefWidth="50.0" text="Nombre" textFill="WHITE" />
+      <Label layoutX="22.0" layoutY="97.0" text="Descripcion" textFill="WHITE" />
+      <Label layoutX="25.0" layoutY="133.0" text="Capacidad" textFill="WHITE" />
+      <TextField fx:id="txtNombre" layoutX="108.0" layoutY="59.0" prefHeight="25.0" prefWidth="420.0" promptText="Ingrese un nombre de salon" />
+      <TextField fx:id="txtDescripcion" layoutX="108.0" layoutY="93.0" prefHeight="25.0" prefWidth="420.0" promptText="Ingrese una descripcion" />
+      <TextField fx:id="txtCapacidad" layoutX="108.0" layoutY="129.0" prefHeight="25.0" prefWidth="420.0" promptText="Ingrese un capacidad" />
+      <Line endX="411.0" layoutX="115.0" layoutY="41.0" startX="-100.0" stroke="WHITE" />
+      <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="356.0" layoutY="165.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/confirmar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="256.0" layoutY="5.0" onMouseClicked="#cancelar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="456.0" layoutY="165.0" onMouseClicked="#cancelar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/cerrar.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
