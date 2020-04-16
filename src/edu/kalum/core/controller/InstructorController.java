@@ -42,7 +42,7 @@ public class InstructorController implements Initializable{
         this.colFoto.setCellValueFactory(CellFoto->CellFoto.getValue().foto());
     }
     public void agregar(){
-        this.principal.mostrarEscenaAgregarInstructor();
+        this.principal.mostrarEscenaAgregarModificarInstructor();
     }
     
     public void eliminar(){
@@ -57,6 +57,15 @@ public class InstructorController implements Initializable{
                 this.listaInstructor.remove(posicion);
                 JOptionPane.showMessageDialog(null, "Instructor Eliminado con exito", "Eliminar Instructor", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
+    }
+    
+    public void modificar(){
+        if(this.tblInstructor.getSelectionModel().getSelectedItem() == null){
+            JOptionPane.showMessageDialog(null, "Por favor seleccione a un instructor", "Modificar Instructor", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Instructor instructor = this.tblInstructor.getSelectionModel().getSelectedItem();
+            principal.mostrarEscenaAgregarModificarInstructor(instructor);
         }
     }
     

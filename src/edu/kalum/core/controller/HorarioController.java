@@ -34,7 +34,7 @@ public class HorarioController implements Initializable{
     }
     
     public void agregar(){
-        this.principal.mostrarEscenaAgregarHorario();
+        this.principal.mostrarEscenaAgregarModificarHorario();
     }
     public void eliminar(){
         if(this.tblHorario.getSelectionModel().getSelectedItem() == null){
@@ -50,6 +50,15 @@ public class HorarioController implements Initializable{
             }
         }
         
+    }
+    
+    public void modificar(){
+        if(this.tblHorario.getSelectionModel().getSelectedItem() == null){
+            JOptionPane.showMessageDialog(null, "Por favor seleccion un horario", "Eliminar horario", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Horario horario = this.tblHorario.getSelectionModel().getSelectedItem();
+            principal.mostrarEscenaAgregarModificarHorario(horario);
+        }
     }
     
     public Principal getPrincipal() {

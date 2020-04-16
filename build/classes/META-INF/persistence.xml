@@ -3,6 +3,9 @@
     <persistence-unit name="KalumPU" transaction-type="RESOURCE_LOCAL">    
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>edu.kalum.core.model.CarreraTecnica</class>
+        <class>edu.kalum.core.model.Horario</class>
+        <class>edu.kalum.core.model.Instructor</class>
+        <class>edu.kalum.core.model.Salon</class>
         <properties>
             <property name="hibernate.connection.driver_class"  value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/kalum?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC"/>

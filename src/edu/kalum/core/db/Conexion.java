@@ -59,4 +59,14 @@ public class Conexion {
             this.entityManager.getTransaction().rollback();
         }
     }
+    public void modificar(Object objeto){
+        try{
+            this.entityManager.getTransaction().begin();
+            this.entityManager.persist(objeto);
+            this.entityManager.getTransaction().commit();
+        }catch(Exception e){
+            e.printStackTrace();
+            this.entityManager.getTransaction().rollback();
+        }
+    }
 }

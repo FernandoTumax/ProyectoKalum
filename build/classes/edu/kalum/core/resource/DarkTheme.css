@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: #1d1d1d;
+    -fx-background-image: url(/edu/kalum/core/resource/fondo.jpg);
 }
 
 /*.label {

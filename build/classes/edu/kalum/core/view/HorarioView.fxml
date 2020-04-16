@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.HorarioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.HorarioController">
    <children>
       <Label layoutX="23.0" layoutY="31.0" prefHeight="34.0" prefWidth="649.0" text="HORARIOS" textFill="WHITE">
          <font>
@@ -21,7 +23,7 @@
       </TableView>
       <ImageView fitHeight="105.0" fitWidth="117.0" layoutX="905.0" layoutY="31.0" onMouseClicked="#mostrarVentanaPrincipal" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resource/cerrar.png" />
+            <Image url="@../resource/logout.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="25.0" layoutY="458.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
@@ -32,6 +34,11 @@
       <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="458.0" onMouseClicked="#eliminar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/eliminar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="258.0" layoutY="458.0" onMouseClicked="#modificar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/recargar.png" />
          </image>
       </ImageView>
    </children>

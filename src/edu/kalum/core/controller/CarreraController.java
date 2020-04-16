@@ -30,7 +30,7 @@ public class CarreraController implements Initializable{
     }
     
     public void agregar(){
-        this.principal.mostrarEscenaAgregarCarrera();
+        this.principal.mostrarEscenaAgregarModificarCarrera();
     }
     public void eliminar(){
         if(this.tblCarreras.getSelectionModel().getSelectedItem() == null){
@@ -49,6 +49,14 @@ public class CarreraController implements Initializable{
                 //Confirmar la eliminacion
                 JOptionPane.showMessageDialog(null, "Carrera ELiminada");
             }
+        }
+    }
+    public void modificar(){
+        if(this.tblCarreras.getSelectionModel().getSelectedItem() == null){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un elemento", "Modificar Carrera", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            CarreraTecnica carrera = this.tblCarreras.getSelectionModel().getSelectedItem();
+            this.principal.mostrarEscenaAgregarModificarCarrera(carrera);
         }
     }
 

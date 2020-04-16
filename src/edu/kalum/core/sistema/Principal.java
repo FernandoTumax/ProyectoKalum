@@ -1,15 +1,19 @@
 package edu.kalum.core.sistema;
 
 import edu.kalum.core.controller.AcercaDeController;
-import edu.kalum.core.controller.CarreraAgregarController;
+import edu.kalum.core.controller.CarreraAgregarModificarController;
 import edu.kalum.core.controller.CarreraController;
-import edu.kalum.core.controller.HorarioAgregarController;
+import edu.kalum.core.controller.HorarioAgregarModificarController;
 import edu.kalum.core.controller.HorarioController;
-import edu.kalum.core.controller.InstructorAgregarController;
+import edu.kalum.core.controller.InstructorAgregarModificarController;
 import edu.kalum.core.controller.InstructorController;
-import edu.kalum.core.controller.SalonAgregarController;
+import edu.kalum.core.controller.SalonAgregarModificarController;
 import edu.kalum.core.controller.SalonController;
 import edu.kalum.core.controller.VentanaPrincipalController;
+import edu.kalum.core.model.CarreraTecnica;
+import edu.kalum.core.model.Horario;
+import edu.kalum.core.model.Instructor;
+import edu.kalum.core.model.Salon;
 import java.io.IOException;
 import java.io.InputStream;
 import javafx.application.Application;
@@ -81,34 +85,78 @@ public class Principal extends Application {
         }
     }
     
-    public void mostrarEscenaAgregarCarrera(){
+    public void mostrarEscenaAgregarModificarCarrera(){
         try{
-            CarreraAgregarController carreraAgregarView = (CarreraAgregarController)cambiarEscena("CarreraAgregar.fxml",546,222);
+            CarreraAgregarModificarController carreraAgregarView = (CarreraAgregarModificarController)cambiarEscena("CarreraAgregarModificar.fxml",546,222);
             carreraAgregarView.setEscenarioPrincipal(this);
         }catch(IOException e){
             e.printStackTrace();
         }
     }
-    public void mostrarEscenaAgregarHorario(){
+    
+    public void mostrarEscenaAgregarModificarCarrera(CarreraTecnica carrera){
         try{
-            HorarioAgregarController horarioAgregarView= (HorarioAgregarController)cambiarEscena("HorarioAgregar.fxml",546,242);
+            CarreraAgregarModificarController carreraAgregarView = (CarreraAgregarModificarController)cambiarEscena("CarreraAgregarModificar.fxml",546,222);
+            carreraAgregarView.setEscenarioPrincipal(this);
+            carreraAgregarView.setCarrera(carrera);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void mostrarEscenaAgregarModificarHorario(){
+        try{
+            HorarioAgregarModificarController horarioAgregarView= (HorarioAgregarModificarController)cambiarEscena("HorarioAgregarModificar.fxml",546,242);
             horarioAgregarView.setEscenarioPrincipal(this);
         }catch(IOException e){
             e.printStackTrace();
         }
     }
-    public void mostrarEscenaAgregarInstructor(){
+    
+    public void mostrarEscenaAgregarModificarHorario(Horario horario){
         try{
-            InstructorAgregarController instructorAgregarView = (InstructorAgregarController)cambiarEscena("InstructorAgregar.fxml", 546, 405);
+            HorarioAgregarModificarController horarioAgregarView= (HorarioAgregarModificarController)cambiarEscena("HorarioAgregarModificar.fxml",546,242);
+            horarioAgregarView.setEscenarioPrincipal(this);
+            horarioAgregarView.setHorario(horario);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void mostrarEscenaAgregarModificarInstructor(){
+        try{
+            InstructorAgregarModificarController instructorAgregarView = (InstructorAgregarModificarController)cambiarEscena("InstructorAgregarModificar.fxml", 546, 405);
             instructorAgregarView.setEscenarioPrincipal(this);
         }catch(IOException e){
             e.printStackTrace();
         }
     }
-    public void mostrarEscenaAgregarSalon(){
+    
+    public void mostrarEscenaAgregarModificarInstructor(Instructor instructor){
         try{
-            SalonAgregarController salonAgregarView = (SalonAgregarController)cambiarEscena("SalonAgregar.fxml",565, 248);
+            InstructorAgregarModificarController instructorAgregarView = (InstructorAgregarModificarController)cambiarEscena("InstructorAgregarModificar.fxml", 546, 405);
+            instructorAgregarView.setEscenarioPrincipal(this);
+            instructorAgregarView.setInstructor(instructor);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void mostrarEscenaAgregarModificarSalon(){
+        try{
+            SalonAgregarModificarController salonAgregarView = (SalonAgregarModificarController)cambiarEscena("SalonAgregarModificar.fxml",565, 248);
             salonAgregarView.setEscenarioPrincipal(this);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void mostrarEscenaAgregarModificarSalon(Salon elemento){
+        try{
+            SalonAgregarModificarController salonAgregarView = (SalonAgregarModificarController)cambiarEscena("SalonAgregarModificar.fxml",565, 248);
+            salonAgregarView.getLblTitulo().setText("Modificar Salon");
+            salonAgregarView.setEscenarioPrincipal(this);
+            salonAgregarView.setSalon(elemento);
         }catch(IOException e){
             e.printStackTrace();
         }

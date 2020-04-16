@@ -34,7 +34,7 @@ public class SalonController implements Initializable{
         this.colCapacidad.setCellValueFactory(CellCapacidad->CellCapacidad.getValue().capacidad());
     }
     public void agregar(){
-        this.principal.mostrarEscenaAgregarSalon();
+        this.principal.mostrarEscenaAgregarModificarSalon();
     }
     public void eliminar(){
         if(this.tblSalon.getSelectionModel().getSelectedItem() == null){
@@ -48,6 +48,14 @@ public class SalonController implements Initializable{
                 this.listaSalon.remove(posicion);
                 JOptionPane.showMessageDialog(null, "Salon eliminado con exito", "ELiminar Salon", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
+    }
+    public void modificar(){
+        if(this.tblSalon.getSelectionModel().getSelectedItem() == null){
+            JOptionPane.showMessageDialog(null, "Por favor seleccione un salon", "Modificar salon", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Salon salon = this.tblSalon.getSelectionModel().getSelectedItem();
+            principal.mostrarEscenaAgregarModificarSalon(salon);
         }
     }
 
