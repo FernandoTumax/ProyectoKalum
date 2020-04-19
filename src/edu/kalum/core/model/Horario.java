@@ -1,15 +1,18 @@
 package edu.kalum.core.model;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -21,18 +24,27 @@ public class Horario implements Serializable{
     private StringProperty horarioId;
     private ObjectProperty<Date> horarioInicio;
     private ObjectProperty<Date> horarioFinal;
+    
+    private List<Clase> clases;
+    
 
     public Horario() {
         this.horarioId = new SimpleStringProperty();
         this.horarioInicio = new SimpleObjectProperty<Date>();
         this.horarioFinal = new SimpleObjectProperty<Date>();
     }
+    
+    @OneToMany(mappedBy = "horario", fetch = FetchType.EAGER)
+    public List<Clase> getClases() {
+        return clases;
+    }
 
-    /*public Horario(String horarioId, Date horarioInicio, Date horarioFinal) {
-        this.horarioId = horarioId;
-        this.horarioInicio = horarioInicio;
-        this.horarioFinal = horarioFinal;
-    }*/
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
+    }
+
+    
+    
     @Id
     @Column(name = "horario_id")
     public String getHorarioId() {

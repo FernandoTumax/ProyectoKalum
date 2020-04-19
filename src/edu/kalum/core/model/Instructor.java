@@ -1,13 +1,16 @@
 package edu.kalum.core.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -23,6 +26,8 @@ public class Instructor implements Serializable{
    private StringProperty comentario;   
    private StringProperty estatus;  
    private StringProperty foto;
+   
+   private List<Clase> clases;
     
    public Instructor() {
        this.instructorId = new SimpleStringProperty();
@@ -35,16 +40,16 @@ public class Instructor implements Serializable{
        this.foto = new SimpleStringProperty();
     }
 
-    /*public Instructor(String instructorId, String apellidos, String nombres, String direccion, String telefono, String comentario, String estatus, String foto) {
-        this.instructorId = instructorId;
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.comentario = comentario;
-        this.estatus = estatus;
-        this.foto = foto;
-    }*/
+   @OneToMany(mappedBy = "instructor", fetch = FetchType.EAGER)
+    public List<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
+    }
+
+    
     
     @Id
     @Column(name = "instructor_id")

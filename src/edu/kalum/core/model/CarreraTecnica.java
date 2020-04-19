@@ -1,13 +1,16 @@
 package edu.kalum.core.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -17,12 +20,27 @@ import javax.persistence.Table;
 public class CarreraTecnica implements Serializable{
     private final StringProperty codigoCarrera;
     private final StringProperty nombre;
+   
+    private List<Clase> clases;
 
     public CarreraTecnica() {
         this.codigoCarrera = new SimpleStringProperty();
         this.nombre = new SimpleStringProperty();
     }
 
+    
+    @OneToMany(mappedBy = "carreraTecnica", fetch = FetchType.EAGER)
+    public List<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
+    }
+    
+    
+    
+    
     /*public CarreraTecnica(String codigoCarrera, String nombre) {
         this.codigoCarrera = new SimpleStringProperty();
         this.nombre = new SimpleStringProperty();

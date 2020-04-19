@@ -4,7 +4,6 @@ import edu.kalum.core.sistema.Principal;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
-import javax.swing.JOptionPane;
 
 public class VentanaPrincipalController implements Initializable{
 
@@ -38,5 +37,11 @@ public class VentanaPrincipalController implements Initializable{
     }
     public void mostrarAcercaDe(){
         principal.mostrarEscenaAcercaDe();
+    }
+    public void mostrarVentanaClase(){
+        principal.mostrarEscenaClase();
+    }
+    public void cerrar(){
+        System.exit(0);
     }
 }

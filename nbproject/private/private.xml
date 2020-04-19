@@ -12,9 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ferna/Documents/NetBeansProjects/kalum%20v1.0.0/src/edu/kalum/core/controller/VentanaPrincipalController.java</file>
             <file>file:/C:/Users/ferna/Documents/NetBeansProjects/kalum%20v1.0.0/src/edu/kalum/core/db/Conexion.java</file>
-            <file>file:/C:/Users/ferna/Documents/NetBeansProjects/kalum%20v1.0.0/src/edu/kalum/core/resource/DarkTheme.css</file>
+            <file>file:/C:/Users/ferna/Documents/NetBeansProjects/kalum%20v1.0.0/src/edu/kalum/core/sistema/Principal.java</file>
+            <file>file:/C:/Users/ferna/Documents/NetBeansProjects/kalum%20v1.0.0/src/edu/kalum/core/controller/InstructorAgregarModificarController.java</file>
+            <file>file:/C:/Users/ferna/Documents/NetBeansProjects/kalum%20v1.0.0/src/edu/kalum/core/controller/InstructorController.java</file>
         </group>
     </open-files>
 </project-private>

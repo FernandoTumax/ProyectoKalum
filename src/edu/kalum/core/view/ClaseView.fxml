@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.ClaseController">
+   <children>
+      <Label layoutX="23.0" layoutY="31.0" prefHeight="34.0" prefWidth="649.0" text="CLASES" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="41.0" />
+         </font>
+      </Label>
+      <TableView layoutX="25.0" layoutY="196.0" prefHeight="245.0" prefWidth="973.0">
+        <columns>
+          <TableColumn prefWidth="121.63" text="DESCRIPCION" />
+          <TableColumn prefWidth="121.63" text="CICLO" />
+            <TableColumn prefWidth="121.63" text="CUPO MAXIMO" />
+            <TableColumn prefWidth="121.63" text="CUPO MINIMO" />
+            <TableColumn prefWidth="121.63" text="SALON" />
+            <TableColumn prefWidth="121.63" text="HORARIO" />
+            <TableColumn prefWidth="121.63" text="INSTRUCTOR" />
+            <TableColumn prefWidth="121.63" text="CARRERA" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="105.0" fitWidth="117.0" layoutX="905.0" layoutY="31.0" onMouseClicked="#mostrarEscenaPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/logout.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="25.0" layoutY="458.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/eliminar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="258.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/recargar.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

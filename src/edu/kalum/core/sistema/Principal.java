@@ -3,6 +3,8 @@ package edu.kalum.core.sistema;
 import edu.kalum.core.controller.AcercaDeController;
 import edu.kalum.core.controller.CarreraAgregarModificarController;
 import edu.kalum.core.controller.CarreraController;
+import edu.kalum.core.controller.ClaseAgregarModificarController;
+import edu.kalum.core.controller.ClaseController;
 import edu.kalum.core.controller.HorarioAgregarModificarController;
 import edu.kalum.core.controller.HorarioController;
 import edu.kalum.core.controller.InstructorAgregarModificarController;
@@ -23,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.StageStyle;
 
 public class Principal extends Application {
     private Stage escenarioPrincipal;
@@ -80,6 +83,14 @@ public class Principal extends Application {
         try{
             AcercaDeController acercaDeView = (AcercaDeController)cambiarEscena("AcercaDeView.fxml", 1024, 576);
             acercaDeView.setPrincipal(this);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void mostrarEscenaClase(){
+        try{
+        ClaseController claseView = (ClaseController)cambiarEscena("ClaseView.fxml", 1024, 576);
+        claseView.setPrincipal(this);
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -162,14 +173,23 @@ public class Principal extends Application {
         }
     }
     
+    public void mostrarEscenaAgregarModificarClase(){
+        try{
+            ClaseAgregarModificarController claseAgregarModificarView = (ClaseAgregarModificarController)cambiarEscena("ClaseAgregarModificar.fxml", 637, 520);
+            claseAgregarModificarView.setPrincipal(this);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
     @Override
     public void start(Stage escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
         this.escenarioPrincipal.setTitle("Kalum v1.0.0");
+        this.escenarioPrincipal.initStyle(StageStyle.UNDECORATED);
         //mostrarEscenaCarrera();
         //mostrarEscenaHorario();
         mostrarVentanaPrincipal();
-        //this.escenarioPrincipal.initStyle(StageStyle.UNDECORATED);
         this.escenarioPrincipal.show();
         /*Conexion cadena = new Conexion();
         System.out.println(cadena.carreraTecnicaFindAll());*/
