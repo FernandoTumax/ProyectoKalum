@@ -35,9 +35,6 @@ public class ClaseController implements Initializable{
     @FXML private TableColumn<Clase, String> colSalon;
     @FXML private TableColumn<Clase, String> colHorario;
     @FXML private TableColumn<Clase, String> colInstructor;
-    @FXML private TableColumn<Clase, String> colCarreraTecnica;
-    @FXML private TableColumn<Clase, Number> colCupoMaximo;
-    @FXML private TableColumn<Clase, Number> colCupoMinimo;
     
     private ObservableList<Clase> listaClase;
     
@@ -51,11 +48,8 @@ public class ClaseController implements Initializable{
         this.colDescripcion.setCellValueFactory(CellDescripcion->CellDescripcion.getValue().descripcion());
         this.colCiclo.setCellValueFactory(CellCiclo->CellCiclo.getValue().ciclo());
         this.colSalon.setCellValueFactory(CellSalon->CellSalon.getValue().getSalon().nombreSalon());
-        this.colHorario.setCellValueFactory(CellHorario-> new ReadOnlyStringWrapper(CellHorario.getValue().getHorario().horarioInicio() + " - " + CellHorario.getValue().getHorario().getHorarioFinal()));
-        this.colInstructor.setCellValueFactory(CellInstructor->CellInstructor.getValue().getInstructor().apellidos());
-        this.colCarreraTecnica.setCellValueFactory(CellCarrera->CellCarrera.getValue().getCarreraTecnica().nombre());
-        this.colCupoMaximo.setCellValueFactory(CellCupoMax->CellCupoMax.getValue().cupoMaximo());
-        this.colCupoMinimo.setCellValueFactory(CellCupoMin->CellCupoMin.getValue().cupoMinimo());
+        this.colHorario.setCellValueFactory(CellHorario-> new ReadOnlyStringWrapper(CellHorario.getValue().getHorario().getHorarioInicio()+ " - " + CellHorario.getValue().getHorario().getHorarioFinal()));
+        this.colInstructor.setCellValueFactory(CellInstructor->new ReadOnlyStringWrapper(CellInstructor.getValue().getInstructor().getApellidos() + " " + CellInstructor.getValue().getInstructor().getNombres()));
     }
     
     public void agregar(){
