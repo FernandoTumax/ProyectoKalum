@@ -13,6 +13,7 @@ import edu.kalum.core.controller.SalonAgregarModificarController;
 import edu.kalum.core.controller.SalonController;
 import edu.kalum.core.controller.VentanaPrincipalController;
 import edu.kalum.core.model.CarreraTecnica;
+import edu.kalum.core.model.Clase;
 import edu.kalum.core.model.Horario;
 import edu.kalum.core.model.Instructor;
 import edu.kalum.core.model.Salon;
@@ -177,6 +178,16 @@ public class Principal extends Application {
         try{
             ClaseAgregarModificarController claseAgregarModificarView = (ClaseAgregarModificarController)cambiarEscena("ClaseAgregarModificar.fxml", 637, 520);
             claseAgregarModificarView.setPrincipal(this);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void mostrarEscenaAgregarModificarClase(Clase elemento){
+        try{
+            ClaseAgregarModificarController claseAgregarModificarView = (ClaseAgregarModificarController)cambiarEscena("ClaseAgregarModificar.fxml", 637, 520);
+            claseAgregarModificarView.setPrincipal(this);
+            claseAgregarModificarView.setClase(elemento);
         }catch(IOException e){
             e.printStackTrace();
         }

@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kalum.core.controller.ClaseAgregarModificarController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="AGREGAR CARRERA" textFill="WHITE">
+      <Label fx:id="lblTitulo" layoutX="14.0" layoutY="14.0" text="AGREGAR CLASE" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -21,19 +21,17 @@
       <Label layoutX="69.0" layoutY="115.0" text="Ciclo" textFill="WHITE" />
       <Label layoutX="67.0" layoutY="157.0" text="Salon" textFill="WHITE" />
       <Label layoutX="62.0" layoutY="201.0" text="Horario" textFill="WHITE" />
-      <Label layoutX="57.0" layoutY="252.0" text="Instructor" textFill="WHITE" />
-      <Label layoutX="63.0" layoutY="302.0" text="Carrera" textFill="WHITE" />
+      <Label layoutX="59.0" layoutY="261.0" text="Instructor" textFill="WHITE" />
+      <Label layoutX="65.0" layoutY="311.0" text="Carrera" textFill="WHITE" />
       <Label layoutX="45.0" layoutY="356.0" text="Cupo Maximo" textFill="WHITE" />
       <Label layoutX="46.0" layoutY="408.0" text="Cupo Minimo" textFill="WHITE" />
-      <TextField layoutX="130.0" layoutY="64.0" prefHeight="25.0" prefWidth="421.0" />
-      <TextField layoutX="130.0" layoutY="111.0" prefHeight="25.0" prefWidth="421.0" />
-      <TextField layoutX="130.0" layoutY="248.0" prefHeight="25.0" prefWidth="421.0" />
-      <TextField layoutX="130.0" layoutY="298.0" prefHeight="25.0" prefWidth="421.0" />
-      <ComboBox layoutX="130.0" layoutY="153.0" prefHeight="25.0" prefWidth="421.0" />
-      <ComboBox layoutX="130.0" layoutY="206.0" prefHeight="25.0" prefWidth="421.0" />
-      <TextField layoutX="131.0" layoutY="352.0" prefHeight="25.0" prefWidth="421.0" />
-      <TextField layoutX="131.0" layoutY="404.0" prefHeight="25.0" prefWidth="421.0" />
-      <ImageView fitHeight="59.0" fitWidth="69.0" layoutX="452.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="txtDescripcion" layoutX="130.0" layoutY="64.0" prefHeight="25.0" prefWidth="421.0" promptText="Ingrese una descripcion" />
+      <TextField fx:id="txtCiclo" layoutX="130.0" layoutY="111.0" prefHeight="25.0" prefWidth="421.0" promptText="Ingrese un ciclo" />
+      <ComboBox fx:id="cmbSalon" layoutX="130.0" layoutY="153.0" prefHeight="25.0" prefWidth="421.0" promptText="Escoja un salon" />
+      <ComboBox fx:id="cmbHorario" layoutX="130.0" layoutY="206.0" prefHeight="25.0" prefWidth="421.0" promptText="Escoja un horario" />
+      <TextField fx:id="txtCupoMaximo" layoutX="131.0" layoutY="352.0" prefHeight="25.0" prefWidth="421.0" promptText="Ingrese un cupo Maximo" />
+      <TextField fx:id="txtCupoMinimo" layoutX="131.0" layoutY="404.0" prefHeight="25.0" prefWidth="421.0" promptText="Ingrese un cupo minimo" />
+      <ImageView fitHeight="59.0" fitWidth="69.0" layoutX="452.0" layoutY="441.0" onMouseClicked="#agregarClase" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/confirmar.png" />
          </image>
@@ -43,15 +41,7 @@
             <Image url="@../resource/cerrar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="566.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resource/buscar.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="566.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resource/buscar.png" />
-         </image>
-      </ImageView>
+      <ComboBox fx:id="cmbInstructor" layoutX="130.0" layoutY="257.0" prefHeight="25.0" prefWidth="421.0" promptText="Escoja un Instructor" />
+      <ComboBox fx:id="cmbCarreraTecnica" layoutX="130.0" layoutY="307.0" prefHeight="25.0" prefWidth="421.0" promptText="Escoja una Carrera" />
    </children>
 </AnchorPane>

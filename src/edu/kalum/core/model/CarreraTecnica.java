@@ -73,6 +73,7 @@ public class CarreraTecnica implements Serializable{
     }
     
     public String toString(){
-        return codigoCarrera + " " + nombre;
+        return this.getNombre();
     }
+   
 }

@@ -1,5 +1,7 @@
 package edu.kalum.core.model;
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javafx.beans.property.ObjectProperty;
@@ -69,7 +71,7 @@ public class Horario implements Serializable{
         this.horarioInicio.set(horarioInicio);
     }
     
-    public ObjectProperty horarioInicio(){
+    public ObjectProperty<Date> horarioInicio(){
         return this.horarioInicio;
     }
     
@@ -82,8 +84,13 @@ public class Horario implements Serializable{
     public void setHorarioFinal(Date horarioFinal) {
         this.horarioFinal.set(horarioFinal);
     }
-    public ObjectProperty horarioFinal(){
+    public ObjectProperty<Date> horarioFinal(){
         return this.horarioFinal;
     }
    
+    public String toString(){
+        DateFormat inicio = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return inicio.format(this.getHorarioInicio()) + " - " + inicio.format(this.getHorarioFinal());
+    }
+    
 }

@@ -12,6 +12,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.apache.commons.lang3.StringUtils;
 
 
 @Entity
@@ -155,4 +156,8 @@ public class Instructor implements Serializable{
         return this.foto;
     }
    
+    public String toString(){
+        return StringUtils.rightPad(this.getApellidos(),32, " ")+ " | " + this.getNombres() + " | " + this.getTelefono();
+    }
+    
 }

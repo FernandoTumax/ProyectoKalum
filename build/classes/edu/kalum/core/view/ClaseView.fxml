@@ -15,16 +15,16 @@
             <Font name="Times New Roman" size="41.0" />
          </font>
       </Label>
-      <TableView layoutX="25.0" layoutY="196.0" prefHeight="245.0" prefWidth="973.0">
+      <TableView fx:id="tblClase" layoutX="25.0" layoutY="196.0" prefHeight="245.0" prefWidth="973.0">
         <columns>
-          <TableColumn prefWidth="121.63" text="DESCRIPCION" />
-          <TableColumn prefWidth="121.63" text="CICLO" />
-            <TableColumn prefWidth="121.63" text="CUPO MAXIMO" />
-            <TableColumn prefWidth="121.63" text="CUPO MINIMO" />
-            <TableColumn prefWidth="121.63" text="SALON" />
-            <TableColumn prefWidth="121.63" text="HORARIO" />
-            <TableColumn prefWidth="121.63" text="INSTRUCTOR" />
-            <TableColumn prefWidth="121.63" text="CARRERA" />
+          <TableColumn fx:id="colDescripcion" prefWidth="121.63" text="DESCRIPCION" />
+          <TableColumn fx:id="colCiclo" prefWidth="121.63" text="CICLO" />
+            <TableColumn fx:id="colCupoMaximo" prefWidth="121.63" text="CUPO MAXIMO" />
+            <TableColumn fx:id="colCupoMinimo" prefWidth="121.63" text="CUPO MINIMO" />
+            <TableColumn fx:id="colSalon" prefWidth="121.63" text="SALON" />
+            <TableColumn fx:id="colHorario" prefWidth="121.63" text="HORARIO" />
+            <TableColumn fx:id="colInstructor" prefWidth="121.63" text="INSTRUCTOR" />
+            <TableColumn fx:id="colCarreraTecnica" prefWidth="121.63" text="CARRERA" />
         </columns>
       </TableView>
       <ImageView fitHeight="105.0" fitWidth="117.0" layoutX="905.0" layoutY="31.0" onMouseClicked="#mostrarEscenaPrincipal" pickOnBounds="true" preserveRatio="true">
@@ -37,12 +37,12 @@
             <Image url="@../resource/mas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="458.0" onMouseClicked="#eliminar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/eliminar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="258.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="258.0" layoutY="458.0" onMouseClicked="#modificar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/recargar.png" />
          </image>

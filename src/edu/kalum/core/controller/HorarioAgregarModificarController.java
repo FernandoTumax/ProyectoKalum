@@ -38,30 +38,30 @@ public class HorarioAgregarModificarController implements Initializable{
        }else{
            if(horario != null){
                try{
-               Date horarioModificar = new Date();
-               Date inicialModificar = inicio.parse("2002-02-02 " + this.txtHorarioInicial.getText());
-               Date finalModificar = inicio.parse("2002-02-02 " + this.txtHorarioFinal.getText());
-               horario.setHorarioInicio(inicialModificar);
-               horario.setHorarioFinal(finalModificar);
-               Conexion.getInstancia().modificar(horario);
-               JOptionPane.showMessageDialog(null, "Modificacion del Horario exitosa", "Modificacion Horario", JOptionPane.INFORMATION_MESSAGE);
-               this.escenarioPrincipal.mostrarEscenaHorario();
+                    Date horarioModificar = new Date();
+                    Date inicialModificar = inicio.parse("2002-02-02 " + this.txtHorarioInicial.getText());
+                    Date finalModificar = inicio.parse("2002-02-02 " + this.txtHorarioFinal.getText());
+                    horario.setHorarioInicio(inicialModificar);
+                    horario.setHorarioFinal(finalModificar);
+                    Conexion.getInstancia().modificar(horario);
+                    JOptionPane.showMessageDialog(null, "Modificacion del Horario exitosa", "Modificacion Horario", JOptionPane.INFORMATION_MESSAGE);
+                    this.escenarioPrincipal.mostrarEscenaHorario();
            }catch(Exception e){
                e.printStackTrace();
                 }
            }
            try{
-            Horario nuevo = new Horario();
-            Date horarioInicio = new Date();
-            Date inicial = inicio.parse("2020-03-01 " + txtHorarioInicial.getText());
-            Date finalizar = inicio.parse("2020-04-12 " + txtHorarioFinal.getText());
-            nuevo.setHorarioId(UUID.randomUUID().toString());
-            nuevo.setHorarioInicio(inicial);
-            nuevo.setHorarioFinal(finalizar);
-            Conexion.getInstancia().agregar(nuevo);
-            this.escenarioPrincipal.mostrarEscenaHorario();
+                Horario nuevo = new Horario();
+                Date horarioInicio = new Date();
+                Date inicial = inicio.parse("2020-03-01 " + txtHorarioInicial.getText());
+                Date finalizar = inicio.parse("2020-04-12 " + txtHorarioFinal.getText());
+                nuevo.setHorarioId(UUID.randomUUID().toString());
+                nuevo.setHorarioInicio(inicial);
+                nuevo.setHorarioFinal(finalizar);
+                Conexion.getInstancia().agregar(nuevo);
+                this.escenarioPrincipal.mostrarEscenaHorario();
            }catch(Exception e){
-               e.printStackTrace();
+                e.printStackTrace();
            }
        }
     }

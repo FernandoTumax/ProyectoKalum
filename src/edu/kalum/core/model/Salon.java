@@ -12,6 +12,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.apache.commons.lang3.StringUtils;
 
 @Entity
 @Table(name = "salon")
@@ -100,6 +101,11 @@ public class Salon implements Serializable{
     }
     public StringProperty capacidad(){
         return this.capacidad;
+    }
+    
+    @Override
+    public String toString(){
+        return this.getNombreSalon() + " | " + StringUtils.rightPad(this.getDescripcion().trim(),64, " ") + " | " + this.getCapacidad();
     }
     
 }
