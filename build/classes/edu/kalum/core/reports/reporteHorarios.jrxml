@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteHorarios" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e662ae57-8881-4d78-ada0-9a98e8130959">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FF0000">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#FF0000">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="ffe35a1f-9b71-42a6-82e9-3a8c3d537edc"/>
+	<queryString>
+		<![CDATA[select horario_id, horario_inicio, horario_final from horario;]]>
+	</queryString>
+	<field name="horario_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horario_inicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horario_final" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="131" y="18" width="545" height="44" backcolor="#FF0000" uuid="2201d883-15a5-4d76-8fa8-9468b131ce9d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="244" y="17" width="325" height="45" uuid="a69aaa8b-e82e-4bda-9a28-187a25a2585a"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de Horarios]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="20" backcolor="#0000CC" uuid="b1409dce-4b5f-4be1-8000-6ea460f18e40"/>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="241" height="20" uuid="e9c18b31-6dc3-44d9-bc9c-caf6c334cc48"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="0" width="281" height="20" uuid="e4dc738f-de73-44fa-bcad-27032404748b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="1" width="280" height="20" uuid="b78c066d-c449-4000-9fdb-e07e0fe00754"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Final]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" mode="Opaque" x="0" y="1" width="802" height="20" backcolor="#F0F0F0" uuid="cda45a07-d218-42f0-9080-c68532b033b6"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="9309d8f0-edb8-4f1e-a3db-3cc1c99d28a9">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="241" uuid="4393aad1-243f-4b14-ae78-86ad2b13fd7a">
+						<jr:detailCell style="table 1_TH" height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="281" uuid="8b31be09-479f-40f0-bb0e-8a321a6f34f4">
+						<jr:detailCell style="table 1_CH" height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="280" uuid="10c19289-6727-4012-ad05-f705a942bd3b">
+						<jr:detailCell style="table 1_TH" height="20" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="1" width="241" height="20" uuid="84358dc3-18f8-416b-b23e-125f8d8d1574"/>
+				<textFieldExpression><![CDATA[$F{horario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="0" width="281" height="20" uuid="f6fbff04-2003-47ea-ba55-62b4e116da4b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{horario_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="522" y="0" width="280" height="20" uuid="f9992299-9a40-4d99-9a83-e0dbc20a1f37"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{horario_final}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="20" backcolor="#0000CC" uuid="6e9e87ea-a42c-464f-9aed-1ef0af5ff438"/>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

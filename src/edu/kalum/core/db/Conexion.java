@@ -1,12 +1,10 @@
 package edu.kalum.core.db;
 
-import edu.kalum.core.model.CarreraTecnica;
-import edu.kalum.core.model.Horario;
-import edu.kalum.core.model.Instructor;
-import edu.kalum.core.model.Salon;
+import java.sql.Connection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import org.hibernate.Session;
 
 
 public class Conexion {
@@ -68,5 +66,26 @@ public class Conexion {
             e.printStackTrace();
             this.entityManager.getTransaction().rollback();
         }
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+    
+    public Connection getConnection(){
+        Connection connection = null;
+        try{
+            this.entityManager.getTransaction().begin();
+            connection = entityManager.unwrap(java.sql.Connection.class);
+            this.entityManager.getTransaction().commit();
+        }catch(Exception e){
+            e.printStackTrace();
+            this.entityManager.getTransaction().rollback();
+        }
+        return connection;
     }
 }

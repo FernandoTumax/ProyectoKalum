@@ -1,9 +1,12 @@
 package edu.kalum.core.controller;
 import edu.kalum.core.db.Conexion;
 import edu.kalum.core.model.CarreraTecnica;
+import edu.kalum.core.reports.GenerarReporte;
 import edu.kalum.core.sistema.Principal;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -60,6 +63,12 @@ public class CarreraController implements Initializable{
         }
     }
 
+    public void imprimirReporte(){
+        Map parametros = new HashMap();
+        //parametros.put("_idCarrera", 10);
+        GenerarReporte.getInstancia().imprimirReporte("reporteCarrera.jasper", parametros);
+    }
+    
     public Principal getPrincipal() {
         return principal;
     }

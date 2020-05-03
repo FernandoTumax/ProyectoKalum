@@ -70,18 +70,18 @@
 }
 
 .menu-bar {
-    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-background-color: derive(#000000,20%);
 }
 
 .context-menu {
-    -fx-background-color: derive(#1d1d1d,50%);
+    -fx-background-color: derive(#00d2ff,50%);
 }
 
 .menu-bar .label {
-    -fx-font-size: 14pt;
+    -fx-font-size: 17pt;
     -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: white;
-    -fx-opacity: 0.9;
+    -fx-text-fill: black;
+    -fx-opacity: 10.0;
 }
 
 .menu .left-container {

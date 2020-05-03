@@ -25,6 +25,10 @@ public class ClaseAgregarModificarController implements Initializable{
     
     private Principal principal;
     private Clase clase;
+    private Horario horario;
+    private Salon salon;
+    private Instructor instructor;
+    private CarreraTecnica carrera;
     private ObservableList<Salon> salones;
     private ObservableList<Horario> horarios;
     private ObservableList<Instructor> instructores;
@@ -71,7 +75,7 @@ public class ClaseAgregarModificarController implements Initializable{
         }else if(this.txtCiclo.getText().isEmpty() == true){
             JOptionPane.showMessageDialog(null, "Por favor ingrese un ciclo", "Agregar Clase", JOptionPane.ERROR_MESSAGE);
         }else if(this.cmbSalon.getSelectionModel().getSelectedItem() == null){
-            JOptionPane.showMessageDialog(null, "Por favot escoja un salon", "Agregar Clase",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Por favor escoja un salon", "Agregar Clase",JOptionPane.ERROR_MESSAGE);
         }else if(this.cmbHorario.getSelectionModel().getSelectedItem() == null){
             JOptionPane.showMessageDialog(null, "Por favor escoja un horario", "Agregar Clase", JOptionPane.ERROR_MESSAGE);
         }else if(this.cmbInstructor.getSelectionModel().getSelectedItem() == null){
@@ -110,6 +114,10 @@ public class ClaseAgregarModificarController implements Initializable{
                 nuevo.setCarreraTecnica(this.cmbCarreraTecnica.getSelectionModel().getSelectedItem());
                 nuevo.setCupoMaximo(Integer.parseInt(this.txtCupoMaximo.getText()));
                 nuevo.setCupoMinimo(Integer.parseInt(this.txtCupoMinimo.getText()));
+                nuevo.setSalonId(this.salon.getSalonId());
+                nuevo.setHorarioId(this.horario.getHorarioId());
+                nuevo.setInstructorId(this.instructor.getInstructorId());
+                nuevo.setCarreraId(this.carrera.getCodigoCarrera());
                 Conexion.getInstancia().agregar(nuevo);
                 JOptionPane.showMessageDialog(null, "Clase agregada con exito", "Agregar Clase", JOptionPane.INFORMATION_MESSAGE);
                 this.principal.mostrarEscenaClase();

@@ -11,16 +11,22 @@
     <jar href="lib\antlr-2.7.7.jar" size="445288" download="eager" />
     <jar href="lib\byte-buddy-1.8.12.jar" size="2970261" download="eager" />
     <jar href="lib\classmate-1.3.4.jar" size="65100" download="eager" />
+    <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
     <jar href="lib\commons-lang3-3.10-javadoc.jar" size="1476083" download="eager" />
     <jar href="lib\commons-lang3-3.10-sources.jar" size="582013" download="eager" />
     <jar href="lib\commons-lang3-3.10-test-sources.jar" size="465610" download="eager" />
     <jar href="lib\commons-lang3-3.10-tests.jar" size="1007566" download="eager" />
     <jar href="lib\commons-lang3-3.10.jar" size="523372" download="eager" />
+    <jar href="lib\commons-logging-1.1.jar" size="52592" download="eager" />
     <jar href="lib\dom4j-1.6.1.jar" size="313898" download="eager" />
+    <jar href="lib\groovy-all-2.0.1.jar" size="6191960" download="eager" />
     <jar href="lib\hibernate-commons-annotations-5.0.3.Final.jar" size="76044" download="eager" />
     <jar href="lib\hibernate-core-5.2.10.Final.jar" size="6618716" download="eager" />
     <jar href="lib\hibernate-core-5.3.1.Final.jar" size="6929869" download="eager" />
+    <jar href="lib\iText-2.1.7.js2.jar" size="1130575" download="eager" />
     <jar href="lib\jandex-2.0.3.Final.jar" size="186741" download="eager" />
+    <jar href="lib\jasperreports-5.6.0.jar" size="4989676" download="eager" />
     <jar href="lib\javassist-3.22.0-GA.jar" size="739582" download="eager" />
     <jar href="lib\javax.ejb-api-3.2.2.jar" size="63679" download="eager" />
     <jar href="lib\javax.persistence-api-2.2.jar" size="164556" download="eager" />

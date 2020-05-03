@@ -24,6 +24,10 @@ public class Clase implements Serializable{
    private final IntegerProperty ciclo;
    private final IntegerProperty cupoMaximo;
    private final IntegerProperty cupoMinimo;
+   private final StringProperty horarioId;
+   private final StringProperty instructorId;
+   private final StringProperty carreraId;
+   private final StringProperty salonId;
    private Horario horario;
    private Instructor instructor;
    private Salon salon;
@@ -35,6 +39,10 @@ public class Clase implements Serializable{
        this.ciclo = new SimpleIntegerProperty();
        this.cupoMaximo = new SimpleIntegerProperty();
        this.cupoMinimo = new SimpleIntegerProperty();
+       this.horarioId = new SimpleStringProperty();
+       this.instructorId = new SimpleStringProperty();
+       this.carreraId = new SimpleStringProperty();
+       this.salonId = new SimpleStringProperty();
    }
     
     @ManyToOne(fetch = FetchType.EAGER)
@@ -76,8 +84,8 @@ public class Clase implements Serializable{
     public void setCarreraTecnica(CarreraTecnica carreraTecnica) {
         this.carreraTecnica = carreraTecnica;
     }
-   
-   
+    
+    
     
     @Id
     @Column(name = "clase_id")
@@ -148,5 +156,57 @@ public class Clase implements Serializable{
     public IntegerProperty cupoMinimo(){
         return this.cupoMinimo;
     }
-   
+    
+    @Column(name = "FK_horario")
+    public String getHorarioId() {
+        return horarioId.get();
+    }
+    
+    public void setHorarioId(String horarioId){
+        this.horarioId.set(horarioId);
+    }
+    
+    public StringProperty horarioId(){
+        return this.horarioId;
+    }
+    
+    @Column(name = "FK_instructor")
+    public String getInstructorId() {
+        return instructorId.get();
+    }
+    
+    public void setInstructorId(String instructorId){
+        this.instructorId.set(instructorId);
+    }
+    
+    public StringProperty instructorId(){
+        return this.instructorId;
+    }
+    
+    @Column(name = "FK_carrera")
+    public String getCarreraId() {
+        return carreraId.get();
+    }
+    
+    public void setCarreraId(String carreraId){
+        this.carreraId.set(carreraId);
+    }
+    
+    public StringProperty carreraId(){
+        return this.carreraId;
+    }
+    
+    @Column(name = "FK_salon")
+    public String getSalonId() {
+        return salonId.get();
+    }
+    
+    public void setSalonId(String salonId){
+        this.salonId.set(salonId);
+    }
+    
+    public StringProperty salonId(){
+        return this.salonId;
+    }
+    
 }

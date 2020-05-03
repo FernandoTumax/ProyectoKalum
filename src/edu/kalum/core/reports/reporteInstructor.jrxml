@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteInstructor" language="groovy" pageWidth="990" pageHeight="595" orientation="Landscape" columnWidth="950" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd35888b-3339-43d1-ab19-365ffff64be9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FF0000">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="3c234ac6-1f28-4a67-9402-9df518996b04"/>
+	<queryString>
+		<![CDATA[select instructor_id, apellidos, nombres, comentario, estatus, telefono, direccion from instructor;]]>
+	</queryString>
+	<field name="instructor_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comentario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estatus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="-9" width="950" height="43" backcolor="#66FF66" uuid="5a3a3534-5259-4372-8525-871dcba2f974"/>
+				<rectangle radius="10">
+					<reportElement mode="Transparent" x="127" y="0" width="693" height="43" backcolor="#FF0000" uuid="8b934c39-83c9-4cb8-ac7f-142b8e97b836"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="245" y="0" width="473" height="43" uuid="221bcff9-558b-41a7-b6ae-ba03b7e7c85d"/>
+					<textElement textAlignment="Center">
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Reporte de Horarios]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="950" height="20" backcolor="#0000CC" uuid="4ffbe86b-5832-4275-a469-15e1e2ea90ce"/>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="218" height="20" uuid="2fa3ff17-d313-4fee-aa40-96f2ed3e736c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="0" width="100" height="20" uuid="0f5f5e86-6875-4e24-9500-15fdfc8d605d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="0" width="100" height="20" uuid="e58b4f81-0dc6-452b-88c6-519eaa11d28c"/>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="0" width="274" height="20" uuid="09733264-2a6a-4f8b-89a7-14c545e4bbc6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Comentario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="692" y="0" width="116" height="20" uuid="857c304a-0361-4aee-8b14-7a9de504644e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="820" y="0" width="130" height="20" uuid="8c275d01-7ed9-49b9-8cfd-1faea8876ae2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="950" height="20" uuid="a101d275-025e-454a-a9b9-746e93e73ef6"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="38265c51-b179-4947-bda9-8fefd5b603bd">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="218" uuid="f01d1203-fa4c-496f-b8e2-24ea4afc7ddc">
+						<jr:detailCell height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="100" uuid="6498c611-117f-4c3b-848c-63c54365bf91">
+						<jr:detailCell height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="100" uuid="5a765b87-ac91-478d-9ab6-b987819c257e">
+						<jr:detailCell height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="262" uuid="afd4af8f-ce7b-48e2-b9a0-dca28259782f">
+						<jr:detailCell height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="140" uuid="aa0eadd9-cdb5-437b-bcf0-02daa111d08e">
+						<jr:detailCell height="20" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="130" uuid="fa5bcec6-c3ab-4d94-aed2-28638f2813d0">
+						<jr:detailCell height="20" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="0" width="218" height="20" uuid="e555f993-4d41-4ff8-af8a-d9374f54a19b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{instructor_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="0" width="100" height="20" uuid="7aaad6ff-421c-49e1-a49b-cbbf467609b6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="100" height="20" uuid="ee05228a-1095-4753-8a5d-1e8f8757b5c6"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="262" height="20" uuid="936b085a-a7e4-4818-9b9e-1bd6bd56ca6e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{comentario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="680" y="0" width="140" height="20" uuid="d5b700e7-d7e2-4ddc-94fa-895f4b307ba0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="820" y="0" width="130" height="20" uuid="b260e1ae-ff22-41dc-8f9e-8609052899b4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="950" height="20" backcolor="#0000CC" uuid="cf6878a3-6568-42b6-9ff1-5041532d5ab9"/>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

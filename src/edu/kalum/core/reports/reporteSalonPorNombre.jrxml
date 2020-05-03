@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportSalon" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66dd6a33-1af9-4519-9a93-e0a66e4cb6a4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" forecolor="#FF0033" backcolor="#CC0000">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="cf391adf-2cd2-4f28-bb62-047cc626afa0"/>
+	<parameter name="_nombreSalon" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select salon_id, nombre_salon, descripcion,capacidad from salon where nombre_salon = $P{_nombreSalon};]]>
+	</queryString>
+	<field name="salon_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_salon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="capacidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="32" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="802" height="32" backcolor="#66FF66" uuid="ec428656-05df-4458-b177-2076472b2929"/>
+			</frame>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="134" y="0" width="545" height="32" backcolor="#FF0000" uuid="48582bbb-3bd7-4f8c-a38d-6233e7507ba4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="253" y="0" width="325" height="32" uuid="ab7be394-1991-4185-b4e9-aeae3d3bf5e6"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de Horarios]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="12" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="12" backcolor="#3333FF" uuid="d34eaeff-6ac8-4170-a7b7-cd39fd9128e9"/>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<rectangle radius="5">
+				<reportElement x="0" y="0" width="802" height="20" uuid="5c6a611f-80c4-4815-a978-b74fa00a3b9c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="220" height="20" uuid="1c57cbb2-eeba-402c-9b7a-cf6d24bc7d18"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="0" width="279" height="20" uuid="b2c7db48-4661-47f8-a866-de0276d759de"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="0" width="245" height="20" uuid="639b4c78-3d19-47f8-8081-21cf45cd4f03"/>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="0" width="100" height="20" uuid="2492b8c3-39b2-4986-93cb-543e000a3116"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Capacidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table_CH" x="0" y="0" width="802" height="21" uuid="ddef1ad2-261f-4b0e-b453-109aa9135322"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="4d4b9635-e506-40c6-841d-1ace4118b14b">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="c65ea806-0036-4497-8a30-e5f634188669">
+						<jr:detailCell height="27" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="8d407ad7-5d41-4c38-814d-9664d82f37d2">
+						<jr:detailCell height="27" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="01e51d49-ce70-434b-a6f4-42665e2d79b8">
+						<jr:detailCell height="27" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="110" uuid="fa729059-eea7-49bf-98ee-9958a8be7481">
+						<jr:detailCell height="27" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="297" uuid="783e233b-126a-4bce-9626-507e103d8acd">
+						<jr:detailCell height="27" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="125" uuid="a540d80f-8cb4-428f-ae48-316d743969a1">
+						<jr:detailCell height="27" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="457" y="0" width="245" height="20" uuid="778508bd-61d2-4156-8d41-87ec3ab06828"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="702" y="0" width="100" height="20" uuid="2a1bf8cf-d0d7-4b43-97b3-ff801f1b9315"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{capacidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="220" height="20" uuid="f17774a9-c020-49d8-aedb-0cf4337c9ae8"/>
+				<textFieldExpression><![CDATA[$F{salon_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="279" height="20" uuid="f0c63982-7157-457f-9594-8457a56185f0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nombre_salon}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
